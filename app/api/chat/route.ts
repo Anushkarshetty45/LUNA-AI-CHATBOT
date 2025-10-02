@@ -131,30 +131,32 @@ Example good format:
       message: aiMessage,
       updatedMemory: updatedMemory !== userMemory ? updatedMemory : undefined
     })
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Chat error:', error)
     
-    if (error.name === 'AbortError') {
+    const errorObj = error as Error
+    
+    if (errorObj.name === 'AbortError') {
       return NextResponse.json({ 
         error: 'Request timed out. Please try again.' 
       }, { status: 408 })
     }
     
     // Handle specific Google API errors
-    if (error.message?.includes('API key')) {
+    if (errorObj.message?.includes('API key')) {
       return NextResponse.json({ 
         error: 'Invalid API key. Please check your Google AI API key in .env.local' 
       }, { status: 401 })
     }
     
-    if (error.message?.includes('quota')) {
+    if (errorObj.message?.includes('quota')) {
       return NextResponse.json({ 
         error: 'API quota exceeded. Please try again later or check your Google AI quota.' 
       }, { status: 429 })
     }
     
     return NextResponse.json({ 
-      error: error.message || 'Failed to process message' 
+      error: errorObj.message || 'Failed to process message' 
     }, { status: 500 })
   }
 }

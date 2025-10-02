@@ -24,7 +24,7 @@ export default function MessageList({ messages, loading }: MessageListProps) {
               </svg>
             </div>
             <h3 className="text-xl font-light text-gray-700 dark:text-gray-300">Start a conversation with LUNA</h3>
-            <p className="text-sm text-gray-500 dark:text-gray-400 font-light">Ask me anything! I'm here to help with questions, ideas, or just to chat.</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400 font-light">Ask me anything! I&apos;m here to help with questions, ideas, or just to chat.</p>
             <div className="flex flex-wrap gap-2 justify-center mt-6">
               <div className="px-4 py-2 rounded-full bg-white/50 dark:bg-white/5 border border-gray-200/50 dark:border-gray-700/20 text-xs text-gray-600 dark:text-gray-400 font-light hover:border-gray-500/40 transition-all cursor-pointer">💡 Get creative ideas</div>
               <div className="px-4 py-2 rounded-full bg-white/50 dark:bg-white/5 border border-gray-200/50 dark:border-gray-700/20 text-xs text-gray-600 dark:text-gray-400 font-light hover:border-gray-500/40 transition-all cursor-pointer">📚 Learn something new</div>
