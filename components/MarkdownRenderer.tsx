@@ -1,5 +1,7 @@
 'use client'
 
+import React from 'react'
+
 interface MarkdownRendererProps {
   content: string
 }
@@ -7,7 +9,7 @@ interface MarkdownRendererProps {
 export default function MarkdownRenderer({ content }: MarkdownRendererProps) {
   const renderContent = () => {
     const lines = content.split('\n')
-    const elements: JSX.Element[] = []
+    const elements: React.JSX.Element[] = []
     let tableRows: string[][] = []
     let isInTable = false
     let listItems: string[] = []
