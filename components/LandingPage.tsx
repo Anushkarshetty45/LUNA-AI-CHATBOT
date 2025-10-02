@@ -6,7 +6,7 @@ import ThemeToggle from './ThemeToggle'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-[#0a0520] via-[#0d0d2b] to-[#1a1a3e] relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-[#0a1628] via-[#0d1b2a] via-[#1b263b] to-[#0d1b2a] relative overflow-hidden">
       {/* Night Sky Background */}
       <div className="absolute inset-0">
         {/* Shooting star effect */}
@@ -69,7 +69,7 @@ export default function LandingPage() {
             </h1>
           </div>
           
-          <p className="text-lg text-gray-400 mb-12 font-light">
+          <p className="text-lg text-white mb-12 font-light">
             Your intelligent AI companion
           </p>
           
@@ -112,9 +112,9 @@ export default function LandingPage() {
 function Feature({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/5 hover:bg-white/10 transition-all duration-300">
-      <div className="flex justify-center mb-3 text-purple-400">{icon}</div>
+      <div className="flex justify-center mb-3 text-white">{icon}</div>
       <h3 className="text-sm font-light text-white mb-1">{title}</h3>
-      <p className="text-xs text-gray-400 font-light">{description}</p>
+      <p className="text-xs text-white font-light">{description}</p>
     </div>
   )
 }
