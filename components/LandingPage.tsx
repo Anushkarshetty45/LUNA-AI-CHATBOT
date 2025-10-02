@@ -6,53 +6,68 @@ import ThemeToggle from './ThemeToggle'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
       
+      {/* Theme toggle button */}
       <div className="absolute top-6 right-6 z-10">
         <ThemeToggle />
       </div>
 
+      {/* Centered content */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4">
+        
         {/* Hero Section */}
         <div className="text-center max-w-4xl mx-auto">
-          {/* Moon Icon with LUNA */}
+          {/* Moon Icon with glow + LUNA title */}
           <div className="flex items-center justify-center gap-5 mb-8">
             <div className="relative group">
-              {/* Outer glow layers - intense white glow effect */}
+              {/* Glowing layers */}
               <div className="absolute inset-0 -m-12 rounded-full bg-white/30 blur-3xl animate-pulse"></div>
               <div className="absolute inset-0 -m-10 rounded-full bg-white/40 blur-3xl animate-pulse" style={{animationDelay: '0.3s'}}></div>
               <div className="absolute inset-0 -m-8 rounded-full bg-white/50 blur-2xl animate-pulse" style={{animationDelay: '0.5s'}}></div>
               <div className="absolute inset-0 -m-6 rounded-full bg-white/60 blur-2xl animate-pulse" style={{animationDelay: '0.7s'}}></div>
               <div className="absolute inset-0 -m-4 rounded-full bg-white/70 blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
               
-              {/* Moon icon - white with intense glow */}
-              <svg className="w-24 h-24 relative z-10 text-white drop-shadow-[0_0_40px_rgba(255,255,255,1)] drop-shadow-[0_0_80px_rgba(255,255,255,0.8)]" viewBox="0 0 24 24" fill="currentColor">
+              {/* Moon icon */}
+              <svg 
+                className="w-24 h-24 relative z-10 text-white drop-shadow-[0_0_40px_rgba(255,255,255,1)] drop-shadow-[0_0_80px_rgba(255,255,255,0.9)]" 
+                viewBox="0 0 24 24" 
+                fill="currentColor"
+              >
                 <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
               </svg>
             </div>
-            <h1 className="text-8xl font-light tracking-widest text-white">
+
+            <h1 className="text-8xl font-light tracking-widest text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.8)]">
               LUNA
             </h1>
           </div>
           
-          <p className="text-lg text-white mb-12 font-light">
+          {/* Subtitle */}
+          <p className="text-lg text-white mb-12 font-light drop-shadow-[0_0_15px_rgba(255,255,255,0.7)]">
             Your intelligent AI companion
           </p>
           
+          {/* CTA button */}
           <button
             onClick={() => signIn('google', { callbackUrl: '/chat' })}
             className="group relative px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white font-light text-lg hover:bg-white/20 transition-all duration-300 hover:scale-105"
           >
             <span className="flex items-center gap-2">
               Start Chatting
-              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg 
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </span>
           </button>
         </div>
 
-        {/* Minimal Features */}
+        {/* Features Section */}
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-24">
           <Feature
             icon={<MessageCircle className="w-6 h-6" strokeWidth={1.5} />}
@@ -75,6 +90,7 @@ export default function LandingPage() {
   )
 }
 
+/* Reusable Feature Card */
 function Feature({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="text-center p-6 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
@@ -84,4 +100,3 @@ function Feature({ icon, title, description }: { icon: React.ReactNode; title: s
     </div>
   )
 }
-
