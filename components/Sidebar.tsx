@@ -63,7 +63,7 @@ export default function Sidebar({ onNewChat, conversations, currentConversationI
                 e.stopPropagation()
                 onDeleteConversation(conv.id)
               }}
-              className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-md opacity-0 group-hover:opacity-100 hover:bg-red-500/10 text-gray-400 hover:text-red-500 dark:text-gray-500 dark:hover:text-red-400 transition-all cursor-pointer"
+              className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-md opacity-50 group-hover:opacity-100 hover:bg-red-500/10 text-gray-400 hover:text-red-500 dark:text-gray-500 dark:hover:text-red-400 transition-all cursor-pointer"
               title="Delete chat"
             >
               <Trash2 className="w-3.5 h-3.5" strokeWidth={1.5} />
